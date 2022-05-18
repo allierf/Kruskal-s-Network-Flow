@@ -1,0 +1,14 @@
+The Set would look like:
+    D (2)
+  /  \
+ C(0) B (1)
+       \
+        A (0)
+
+If we set x to A and call find(A) then the graph would look like:
+   D
+ / | \
+C  B  A
+
+Rank signifies the depth of the tree. The parent node's rank is the largest rank indicating that it is the parent of the graph. The rank is important for the union function because if rank x is greater than rank y we know that x's tree is larger so making tree y the child of x wont increase the look up time. If we did not account for rank then we could have a union that makes a smaller tree the parent which increases the depth of that tree meaning more time needed to find the farther nodes.
+

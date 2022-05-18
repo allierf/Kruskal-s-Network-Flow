@@ -1,0 +1,27 @@
+Q4.A:
+Cut #1
+{s, v} / {u, t}
+capacity = 7 + 8 = 15
+
+Cut #2
+{s, u} / {v, t}
+capacity = 1 + 3 + 2 = 6
+
+Cut #3
+{u, s, v} / {t}
+capacity = 8 + 2 = 10
+
+Cut #4
+{s} / {u, v, t}
+capacity = 7 + 1 = 8
+
+Q4.B:
+
+s-u flow = 5
+s-v flow = 1
+u-v flow = 3
+u-t flow = 2
+v-t flow = 4
+
+The in-flow cannot be greater than the out-flow and vise versa. If we were to pump water from the source s to the sink t then we cannot exceed the maximum flow. A bottleneck is created when the flow is at max capacity and you cant push more water through it. For example s-u has a max capacity of 7 however the two connecting pipes can only support a max flow of 5 so s-u can only push a flow of 5. Another example of a bottleneck in the graph is s-v with a max capacity of 1. This edge is limiting the flow to the other edges which is exactly the min cut. If you find the min cut then you know the max flow. If you know the max flow then you know the capacity of the cut. 
+

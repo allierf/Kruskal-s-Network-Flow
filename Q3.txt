@@ -1,0 +1,24 @@
+Q3.A
+The sink is the school because Alice and Bob are both trying to find routes to the school. The source is their home because that is where they start. The edge capacity is 1 to ensure that only one of them can take that path at a time. To know if it is possible for both of them to go to school, we can check that a flow of two is entering the school. For example a potential graph could look like:
+         1       1        1
+(House)------()-----()------()
+    |      / |    /  |     / |
+   1|   1/   |  1/   |  1/   |1
+    |  /    1|  /   1|  /    |
+    | /      | /     | /     |
+   ()--------()------()-------(School1)
+         1        1       1              
+
+We are basically pushing a flow of 2 from the house through the pipes that have a capacity of 1 which will create two paths that lead to the school.
+
+
+Q3.B
+The transformation we can add to make sure they dont cross is modifying the vertex capacity to only allow one person to cross that corner. Basically for each corner or vertex we will create two vertexes that connect to each other with a capacity of 1. So if we have a vertex v, we change that to v1 and v2 with edge capacity of 1. Then all incoming flow to that edge will point to v1 and all out going flow will point from v2. This transformation will need to be applied to every intersection. So for example the graph would be modified to look something like:
+         1     1       1       1
+(House)-->(v1)-->(v2)--->(c1)-->(c2)
+    |      ^        |      ^      |
+  1 |      |       1|      |     1|
+    |    1 |        |     1|      |
+    v      |        v      |      v
+  (a1)--->(a2)--->(b1)-->(b2)-->(School1)
+       1        1      1      1          

@@ -1,0 +1,7 @@
+makeset will be called |E| times to create a set of all of the potential edges that could be added to the minimum spanning tree.
+
+find will be called |E| times because all the edges in the graph will be checked.
+
+union will be called |V| - 1 times
+
+find(u) != find(v) checks whether u and v are already apart of the same set. For example, if we have a graph with A,B,C,D, nodes and edges AB-1, AC-1, BD-2, AD-3, CD-4 then all of the nodes orginally start in seperate sets {A},{B},{C},{D}. Then (A,B) will be checked by the find() function to see if they return in the same set. Since they are not in the same set, the nodes will be unioned and combined  so the sets will now be {A,B}{C},{D}. This will continue to happen until a minimum spanning tree is produced and all the nodes are in the same set. So basically this will not allow for a cycle because the nodes will already be in the same set if they are already connected. 
